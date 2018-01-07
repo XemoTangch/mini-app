@@ -9,6 +9,11 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  clickMe: function() {
+    wx.navigateTo({
+      url: '../test/index',
+    })
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({

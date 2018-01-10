@@ -1,42 +1,10 @@
-// pages/test/index.js
 Page({
-  clickMe: function(){
-    this.setData({ msg: '点点点点点点' });
-  },
-  getData: function(e){
-    wx.request({
-      url: 'http://apitest.imhaiguiapp.com/api/circle/NearbyList', //仅为示例，并非真实的接口地址
-      data: {
-        uid: '28117',
-        latitude: '22.549134',
-        longitude: '113.943874',
-        page: '1',
-        size: '10',
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.info('success');
-        console.log(res.data)
-      },
-      fail: function (res) {
-        console.info('fail');
-        console.log(res);
-      },
-      complete: function (res) {
-        console.info('complete');
-      }
-    });
-
-
-  },
 
   /**
    * 页面的初始数据
    */
   data: {
-    msg: 'wowowowowowowo'
+    
   },
 
   /**

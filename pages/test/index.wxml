@@ -5,3 +5,7 @@
   <!-- 以下是对一个自定义组件的引用 -->
   <component-tag-name inner-text="hellow world"></component-tag-name>
 </view>
+
+<view>
+<button bindtap="getData" id="getData"  value="aaaaa" type='primary'>点击获取</button>
+</view>

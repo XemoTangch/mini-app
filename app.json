@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/eventList/index",
+    "pages/test/index",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/test/index"
+    "pages/logs/logs"
   ],
   "window": {
     "navigationBarTitleText": "Demo"
@@ -16,6 +17,14 @@
       {
         "pagePath": "pages/logs/logs",
         "text": "日志"
+      },
+      {
+        "pagePath": "pages/eventList/index",
+        "text": "活动列表",
+        "iconPath": "image/activity_comment.png",
+        "selectedIconPath": "image/activity_comment.png",
+        "color": "#9c9c9c",
+        "selectedColor": "#ffd270"
       }
     ]
   },

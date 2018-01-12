@@ -9,22 +9,28 @@
     "navigationBarTitleText": "Demo"
   },
   "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#ffd270",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "image/activity_comment.png",
+        "selectedIconPath": "image/activity_comment.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "text": "日志",
+        "iconPath": "image/activity_comment.png",
+        "selectedIconPath": "image/activity_comment.png"
       },
       {
         "pagePath": "pages/eventList/index",
         "text": "活动列表",
         "iconPath": "image/activity_comment.png",
-        "selectedIconPath": "image/activity_comment.png",
-        "color": "#9c9c9c",
-        "selectedColor": "#ffd270"
+        "selectedIconPath": "image/activity_comment.png"
       }
     ]
   },

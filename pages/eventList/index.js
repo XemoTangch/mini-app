@@ -1,10 +1,20 @@
+var util = require('../../utils/util.js');
+//获取应用实例
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数 据
    */
   data: {
-    event_list : []
+    event_list : [],
+    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    indicatorDots: true, // 是否显示指示点
+    vertical: true,
+    autoplay: true, // 是否自动播放
+    interval: 3000, // 图片轮播时间间隔
+    duration: 500   // 轮播动画持续时间
   },
 
   /**
@@ -13,8 +23,9 @@ Page({
   onLoad: function (options) {
     this.event_list = wx.getStorageSync('event_list_1');
     if(!this.event_list){
+      console.info('请求开始');
       wx.request({
-        url: 'http://apitest.imhaiguiapp.com/api/event/NearbyList', //仅为示例，并非真实的接口地址
+        url: app.globalData.domain + '/api/event/NearbyList', //仅为示例，并非真实的接口地址
         data: {
           uid: '28117',
           city_id: '77',
@@ -38,6 +49,8 @@ Page({
         }
       });
     }
+    console.info('页面开始加载');
+    console.info(app.globalData.domain);
 
   },
 
@@ -45,48 +58,84 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.info(this.event_list);
+    console.info('初次渲染完成');
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    console.info('页面显示');
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+    console.info('页面隐藏');
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+    console.info('页面隐藏');
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    console.info('用户下拉');
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+    console.info('页面触底');
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    console.info('用户点击分享');
+  },
+
+  /**
+   * 轮播图
+   */
+  changeIndicatorDots: function (e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay: function (e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange: function (e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange: function (e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  },
+
+  /**
+   * 下拉刷新
+   */
+  onPullDownRefresh: function(e){
+    console.info('触发下拉刷新');
+    // 判断是否需要更新
+    var has_function = util.updateTip(wx.startPullDownRefresh);
+    if(!has_function) return false;
+
   }
+
 })

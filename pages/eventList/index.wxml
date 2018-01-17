@@ -1,0 +1,30 @@
+<view class="container">
+
+  <view class="page-body">
+    
+    <!-- 广告 -->
+    <view wx:if="{{background}}" class="page-section-my page-section-spacing-my swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 活动列表 -->
+    <view wx:if="{{event_list}}">
+      <view wx:for="{{event.list}}" wx:key="*this">
+        <image src=''></image>
+      </view>
+    </view>
+
+  </view>
+
+  
+
+  
+
+</view>

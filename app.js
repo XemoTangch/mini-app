@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    domain: 'http://apitest.imhaiguiapp.com'
   }
 })

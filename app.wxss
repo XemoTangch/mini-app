@@ -189,7 +189,7 @@ form{
   font-size: 36rpx;
 }
 .demo-text-1:before{
-  content: 'A';
+  content: '广告1';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -204,7 +204,7 @@ form{
   font-size: 36rpx;
 }
 .demo-text-2:before{
-  content: 'B';
+  content: '广告2';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -219,7 +219,7 @@ form{
   font-size: 36rpx;
 }
 .demo-text-3:before{
-  content: 'C';
+  content: '广告3';
   position: absolute;
   top: 50%;
   left: 50%;

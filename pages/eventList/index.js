@@ -8,8 +8,10 @@ Page({
    * 页面的初始数 据
    */
   data: {
-    event_list : [],
+    event_list : '',
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    // background: '',
+    domain: app.globalData.domain,
     indicatorDots: true, // 是否显示指示点
     vertical: true,
     autoplay: true, // 是否自动播放
@@ -21,8 +23,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.event_list = wx.getStorageSync('event_list_1');
-    if(!this.event_list){
+    var event_list = wx.getStorageSync('event_list_1');
+    if(!event_list){
       console.info('请求开始');
       wx.request({
         url: app.globalData.domain + '/api/event/NearbyList', //仅为示例，并非真实的接口地址
@@ -38,7 +40,7 @@ Page({
         success: function (res) {
           console.info('success');
           console.log(res.data);        
-          this.event_list = res.data;
+          event_list = res.data;
           wx.setStorageSync('event_list_1', res.data);
         },
         fail: function (res) {
@@ -50,7 +52,9 @@ Page({
       });
     }
     console.info('页面开始加载');
-    console.info(app.globalData.domain);
+    this.setData({
+      event_list: event_list.obj
+    });
 
   },
 

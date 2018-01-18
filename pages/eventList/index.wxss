@@ -33,3 +33,16 @@ button:last-child{
   width:100%;
   margin-bottom:10rpx;
 }
+
+#event_list .event_cover{
+  width: 100%;
+}
+#event_list .event_status_img{
+  /* width: 150rpx;
+  height: 150rpx; */
+}
+
+
+.container{
+  background-color: #000;
+}

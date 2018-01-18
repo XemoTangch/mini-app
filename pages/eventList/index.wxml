@@ -15,9 +15,10 @@
     </view>
 
     <!-- 活动列表 -->
-    <view wx:if="{{event_list}}">
-      <view wx:for="{{event.list}}" wx:key="*this">
-        <image src=''></image>
+    <view wx:if="{{event_list}}" id="event_list">
+      <view wx:for="{{event_list}}" wx:key="event_id">
+        <image class="event_cover" src="{{domain}}{{item.cover}}" lazy-load="true"></image>
+        <image class="event_status_img" src="../../image/event_baoming_new_icon.png"></image>
       </view>
     </view>
 

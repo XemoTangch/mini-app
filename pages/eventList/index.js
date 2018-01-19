@@ -52,6 +52,8 @@ Page({
       });
     }
     console.info('页面开始加载');
+    console.info(event_list.obj);
+    // console.info(util.formatTime(1514367864));
     this.setData({
       event_list: event_list.obj
     });

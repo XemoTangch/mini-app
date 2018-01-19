@@ -16,9 +16,30 @@
 
     <!-- 活动列表 -->
     <view wx:if="{{event_list}}" id="event_list">
-      <view wx:for="{{event_list}}" wx:key="event_id">
-        <image class="event_cover" src="{{domain}}{{item.cover}}" lazy-load="true"></image>
-        <image class="event_status_img" src="../../image/event_baoming_new_icon.png"></image>
+      <view wx:for="{{event_list}}" wx:key="event_id" class="event_one">
+        <view>
+          <image class="jia_v" wx:if="{{item.userInfo.verified.company == 1}}" src="../../image/blue_logo_v.png"></image>
+          <image class="jia_v" wx:if="{{item.userInfo.verified.personal == 1}}" src="../../image/yellow_logo_v.png"></image>
+          <image class="event_user_avatar" src="{{domain}}{{item.userInfo.avatar}}"></image>
+          <image class="event_status_img" src="../../image/event_baoming_new_icon.png" ></image>
+          <image class="event_cover" src="{{domain}}{{item.cover}}"></image>
+        </view>
+        <view>
+          <view class="event_title color_ffd270 font_weight">{{item.title}}</view>
+          <view class="event_column">
+            <image class="stime_icon float_left" mode="aspectFit" src="../../image/activity_time.png"></image>
+            <view class="events_stime float_left">{{item.stime}}</view>
+            <image class="event_icon float_left" mode="aspectFit" src="../../image/activity_man.png"></image>
+            <view class="event_people float_left">{{item.apply_number}}/{{item.people}}人</view>
+            <view class="clear"></view>
+          </view>
+          <view class="event_column">
+            <image class="event_icon float_left" mode="aspectFit" src="../../image/activity_location.png"></image>
+            <view class="event_address float_left">{{item.city_name}}▪{{item.specific_address}}</view>
+            <view class="event_cost float_right color_ffd270 font_weight">￥{{item.price_data[0].cost}}起</view>
+            <view class="clear"></view>
+          </view>
+        </view>
       </view>
     </view>
 

@@ -1,5 +1,21 @@
 @import '../../common/lib/weui.wxss';
 
+.float_left{
+  float: left;
+}
+.float_right{
+  float: right;
+}
+.clear{
+  clear: both;
+}
+.color_ffd270{
+  color:#ffd270;
+}
+.font_weight{
+  font-weight: 600;
+}
+
 button{
   margin-bottom: 30rpx;
 }
@@ -34,12 +50,69 @@ button:last-child{
   margin-bottom:10rpx;
 }
 
+#event_list {
+  color: #cfcfcf;
+}
 #event_list .event_cover{
   width: 100%;
 }
 #event_list .event_status_img{
-  /* width: 150rpx;
-  height: 150rpx; */
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  right: 0rpx; 
+}
+#event_list .event_title{
+  width: 540rpx;
+  padding-left:155rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size:16px;
+}
+#event_list .event_user_avatar{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 125rpx;
+  left: 30rpx;
+  border:1px solid #ffd270;
+  border-radius:50%;
+} 
+#event_list .jia_v{
+  width:35rpx;
+  height: 35rpx;
+  position: absolute;
+  bottom: 120rpx;
+  left: 100rpx;
+  z-index: 100;
+}
+#event_list .event_icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0rpx 10rpx;
+}
+#event_list .stime_icon{
+  width:35rpx;
+  height:35rpx;
+  margin: 0rpx 15rpx;
+}
+#event_list .event_address{
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#event_list .event_one{
+  position: relative;
+  margin-bottom: 50rpx;
+  font-size: 14px;
+}
+#event_list .event_column{
+  margin:15rpx 30rpx;
+}
+#event_list .events_stime{
+  margin-right: 50rpx; 
 }
 
 
